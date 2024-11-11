@@ -1,5 +1,6 @@
 # Ex-6-IMPLEMENTATION-OF-THE-BACK-END-OF-THE-COMPILER-
-
+IMPLEMENTATION OF THE BACK END OF THE COMPILER 
+# Date : 24.10.2024
 # Aim :
 To write a program to implement the back end of the compiler.
 # ALGORITHM
@@ -11,57 +12,47 @@ To write a program to implement the back end of the compiler.
 6. Stop the program.
 # PROGRAM
 ```
-
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
 
 int main() {
-    int i = 2, j = 0, k = 2, k1 = 0;
-    char ip[10], kk[10];
-    FILE *fp;
+int i = 2, j = 0, k = 2, k1 = 0; char ip[10], kk[10];
+FILE *fp;
 
-    printf("Enter the filename of the intermediate code: ");
-    scanf("%s", kk);
+printf("Enter the filename of the intermediate code: "); scanf("%s", kk);
 
-    fp = fopen(kk, "r");
-    if (fp == NULL) {
-        printf("\nError in opening the file\n");
-        return 1;
-    }
-
-    printf("\nStatement\tTarget Code\n\n");
-
-    while (fscanf(fp, "%s", ip) != EOF) {
-        printf("%s\tMOV %c,R%d SUB ", ip, ip[i + k], j);
-
-        if (ip[i + 1] == '+')
-            printf("ADD ");
-        else
-            printf("SUB ");
-
-        if (islower(ip[i]))
-            printf("%c,R%d\n", ip[i + k1], j);
-        else
-            printf("%c,%c\n", ip[i], ip[i + 2]);
-
-        j++;
-        k1 = 2;
-        k = 0;
-    }
-
-    fclose(fp);
-    return 0;
+fp = fopen(kk, "r"); if (fp == NULL) {
+printf("\nError in opening the file\n"); return 1;
 }
+printf("\nStatement\tTarget Code\n\n"); while (fscanf(fp, "%s", ip) != EOF) {
+printf("%s\tMOV %c,R%d SUB ", ip, ip[i + k], j);
+
+if (ip[i + 1] == '+')
+printf("ADD "); else
+printf("SUB ");
+
+if (islower(ip[i])) printf("%c,R%d\n", ip[i + k1], j);
+else
+printf("%c,%c\n", ip[i], ip[i + 2]);
+
+j++;
+k1 = 2;
+k = 0;
+}
+
+fclose(fp);
+
+return 0;
+}
+
 ```
-
 # OUTPUT
-k.txt file
+### k.txt
 
-![380482546-e92c5e6e-5e02-4a40-b0f2-d6714aceb2ea](https://github.com/user-attachments/assets/e220dba2-be5f-40e5-8bce-724b73032fe0)
+![image](https://github.com/user-attachments/assets/bd69c966-a1c8-4613-9d5a-e68838e8cb74)
 
-# Program output:
-![380482578-aa5e2e38-a45f-4988-96ff-ab11a51ff0bf](https://github.com/user-attachments/assets/842e24ed-5e24-4b54-a4ee-4f8e48e9571f)
+![Screenshot 2024-10-17 131504](https://github.com/user-attachments/assets/b7a15f92-8aaa-4166-9cdd-355375b420ab)
 
 # Result
 The back end of the compiler is implemented successfully, and the output is verified.
